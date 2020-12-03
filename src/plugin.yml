@@ -1,0 +1,5 @@
+name: CityCraft
+version: 1
+author: Mcl and Chris
+main: pasta.CityCraft
+api-version: 1.16
