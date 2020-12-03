@@ -43,6 +43,11 @@ public class City {
 
          }
 
+         public boolean find(Chunk c){
+             int key = hashFunction(c);
+
+             return harray[key].contains(c);
+         }
          /**
           * Returns value of key for Chunk c.
           * Key is calculated by adding the Chunks z and x coords and modding by 500 (size of hash table).
