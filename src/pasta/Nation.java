@@ -1,6 +1,10 @@
 package pasta;
 
+import com.google.gson.Gson;
 import org.bukkit.entity.Player;
+
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Nation
 {
@@ -11,6 +15,13 @@ public class Nation
     {
         this.leader = _leader;
         this.name = _name;
+    }
+
+    public void saveAsJSON() throws IOException {
+
+        Gson gson = new Gson();
+
+        gson.toJson(this, new FileWriter("./data.json"));
     }
 
     public String getName() { return name; }
