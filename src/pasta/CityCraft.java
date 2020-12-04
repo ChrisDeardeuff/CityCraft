@@ -1,4 +1,5 @@
 package pasta;
+import com.google.gson.Gson;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -7,11 +8,16 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class CityCraft extends JavaPlugin implements Listener
 {
     ArrayList<Nation> nationsList = new ArrayList<>();
+
+    Nation testNation;
 
     @Override
     public void onEnable()
@@ -23,11 +29,31 @@ public class CityCraft extends JavaPlugin implements Listener
         this.getCommand(Commands.DELETE_NATION).setExecutor(new CommandHandler());
         this.getCommand(Commands.RENAME_NATION).setExecutor(new CommandHandler());
         this.getCommand(Commands.SET_LEADER).setExecutor(new CommandHandler());
+
+        Gson gson = new Gson();
+
+        try {
+
+            testNation = gson.fromJson(new FileReader("./data.json"),Nation.class);
+
+        } catch (FileNotFoundException e) {
+
+            e.printStackTrace();
+
+        }
     }
 
     @Override
     public void onDisable()
     {
+        try {
+
+            testNation.saveAsJSON();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         super.onDisable();
     }
 
@@ -184,6 +210,8 @@ public class CityCraft extends JavaPlugin implements Listener
     void cmd_listNations(CommandSender _sender)
     {
         _sender.sendMessage("NATIONS: "+getNationsListStr());
+
+        testNation = new Nation((Player) _sender, "TestNation");
     }
 
 }
