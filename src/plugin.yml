@@ -1,5 +1,21 @@
 name: CityCraft
-version: 1
-author: Mcl and Chris
+version: 0
+author: Mcl & Chris
 main: pasta.CityCraft
 api-version: 1.16
+commands:
+  nationcreate:
+    description: Create a new nation
+    usage: /nationcreate <nation_name>
+  nationdelete:
+    description: Delete your nation
+    usage: /nationdelete
+  nationrename:
+    description: Rename your nation
+    usage: /nationrename <new_name>
+  setleader:
+    description: Set the leader of your nation
+    usage: /setleader <player>
+  nationlist:
+    description: List all nations
+    usage: /nationlist
