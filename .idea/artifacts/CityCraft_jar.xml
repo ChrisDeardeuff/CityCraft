@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CityCraft:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CityCraft_jar</output-path>
+    <root id="archive" name="CityCraft.jar">
+      <element id="module-output" name="CityCraft" />
+    </root>
+  </artifact>
+</component>
