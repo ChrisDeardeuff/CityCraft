@@ -1,0 +1,30 @@
+name: CivCraft
+version: 0
+author: SirPuffles & InspectorMclel
+main: mcl.Main
+api-version: 1.16
+commands:
+  settle:
+    description: Settle a new city with you as it's mayor.
+    usage: /settle <city_name>
+  claim:
+    description: Claim a chunk for your city.
+    usage: /claim
+  unclaim:
+    description: Relinquish claim of a chunk.
+    usage: /unclaim
+  land:
+    description: Show all land claimed by your city.
+    usage: /land
+  addcitizen:
+    description: Adds a citizen to your city.
+    usage: /addcitizen <player>
+  citizenlist:
+    description: Displays a list of your city's citizens.
+    usage: /citizenlist
+  citylist:
+    description: Displays a list of all cities.
+    usage: /citylist
+  civclear:
+    description: Clear all CivCraft data. (OP Only)
+    usage: /civclear
